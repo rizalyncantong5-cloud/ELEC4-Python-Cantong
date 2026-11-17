@@ -1,3 +1,4 @@
+
 # Name: Rizalyn A. Cantong
 # Section: IV-BSIT A
 # Activity: P6 - Recursive Functions
@@ -89,12 +90,21 @@ while True:
                 print("Sum:", sum_numbers(number))
 
         elif choice == "4":
-            raw_items = input("Enter numbers separated by commas: ")
+            raw_items = input("Enter numbers separated by commas: ").strip()
+
+            if not raw_items:
+                print("Please enter at least one number.")
+                continue
+
             items = [
                 int(value.strip())
                 for value in raw_items.split(",")
                 if value.strip()
             ]
+
+            if not items:
+                print("Please enter valid numbers.")
+                continue
 
             target = int(input("Enter number to search: "))
 
