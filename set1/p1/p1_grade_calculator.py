@@ -70,13 +70,18 @@ def check_result(scores):
 
 # Function 6: Show the complete results
 def show_results(scores):
-    print("\n===== GRADE SUMMARY =====")
-    print("Entered Grades:", scores)
-    print("General Average:", round(find_average(scores), 2))
-    print("Highest Grade:", find_highest(scores))
-    print("Lowest Grade:", find_lowest(scores))
-    print("Final Result:", check_result(scores))
+    average = round(find_average(scores), 2)
+    highest = find_highest(scores)
+    lowest = find_lowest(scores)
+    result = check_result(scores)
 
+    print("\n========== GRADE SUMMARY ==========")
+    print(f"Entered Grades : {scores}")
+    print(f"General Average: {average}")
+    print(f"Highest Grade  : {highest}")
+    print(f"Lowest Grade   : {lowest}")
+    print(f"Final Result   : {result}")
+    print("===================================")
 
 # Main program
 while True:
