@@ -55,6 +55,7 @@ lowest = student_utils.get_lowest(grades)
 
 # Display report
 print("\n===== STUDENT GRADE REPORT =====")
+print("Total Grades:", len(grades))
 print("Grades:", grades)
 print("Average:", round(average, 2))
 print("Highest Grade:", highest)
