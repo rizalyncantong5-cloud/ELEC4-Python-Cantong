@@ -33,9 +33,18 @@ def remove_student():
     if name.casefold() in name_checker:
         for student in student_list:
             if student.casefold() == name.casefold():
-                student_list.remove(student)
-                name_checker.remove(student.casefold())
-                print("Student removed successfully!")
+
+                confirm = input(
+                    f"Are you sure you want to remove {student}? (yes/no): "
+                ).strip().casefold()
+
+                if confirm == "yes":
+                    student_list.remove(student)
+                    name_checker.remove(student.casefold())
+                    print("Student removed successfully!")
+                else:
+                    print("Student removal cancelled.")
+
                 return
     else:
         print("Student not found.")
