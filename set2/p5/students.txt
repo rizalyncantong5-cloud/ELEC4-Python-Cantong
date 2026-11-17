@@ -1,0 +1,6 @@
+
+2026,Juan Dela Cruz,BSIT 4A,95
+2027,Maria Santos,BSIT 4A,92
+2028,Kingsley Hilario,BSIT 4A,89
+2029,Angela Reyes,BSIT 4A,94
+2030,Mark Garcia,BSIT 4A,90
