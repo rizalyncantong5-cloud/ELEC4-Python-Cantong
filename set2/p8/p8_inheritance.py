@@ -30,6 +30,9 @@ class Student(Person):
         if not student_id.strip():
             raise ValueError("Student ID cannot be empty.")
 
+        if not course.strip():
+            raise ValueError("Course cannot be empty.")
+
         self.student_id = student_id
         self.course = course
 
@@ -47,6 +50,13 @@ class Student(Person):
 class Teacher(Person):
     def __init__(self, name, age, subject, department):
         super().__init__(name, age)
+
+        if not subject.strip():
+            raise ValueError("Subject cannot be empty.")
+
+        if not department.strip():
+            raise ValueError("Department cannot be empty.")
+
         self.subject = subject
         self.department = department
 
@@ -107,6 +117,48 @@ try:
         20,
         " ",
         "BS Information Technology"
+    )
+except ValueError as error:
+    print("Validation Error:", error)
+
+
+# Test empty course validation.
+print("\n===== TEST EMPTY COURSE =====")
+
+try:
+    invalid_student = Student(
+        "Test Student",
+        20,
+        "2026-004",
+        " "
+    )
+except ValueError as error:
+    print("Validation Error:", error)
+
+
+# Test empty teacher subject validation.
+print("\n===== TEST EMPTY TEACHER SUBJECT =====")
+
+try:
+    invalid_teacher = Teacher(
+        "Test Teacher",
+        35,
+        " ",
+        "Information Technology"
+    )
+except ValueError as error:
+    print("Validation Error:", error)
+
+
+# Test empty teacher department validation.
+print("\n===== TEST EMPTY TEACHER DEPARTMENT =====")
+
+try:
+    invalid_teacher = Teacher(
+        "Test Teacher",
+        35,
+        "Information Management",
+        " "
     )
 except ValueError as error:
     print("Validation Error:", error)
