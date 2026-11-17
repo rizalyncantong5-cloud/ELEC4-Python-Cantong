@@ -123,7 +123,10 @@ def display_students(students):
         print("No student records available.")
         return
 
-    for student in students:
+    # Sort student records by Student ID
+    sorted_students = sorted(students, key=lambda student: student["id"])
+
+    for student in sorted_students:
         print("------------------------------")
         print("Student ID:", student["id"])
         print("Full Name:", student["name"])
