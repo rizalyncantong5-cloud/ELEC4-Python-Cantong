@@ -1,8 +1,8 @@
+
 # Name: Rizalyn A. Cantong
 # Section: IV-BSIT A
 # Activity: P4 - Exception Handling
 # Date: November 17, 2026
-
 
 # Function 1: Divide two numbers safely
 def divide_numbers():
@@ -32,6 +32,11 @@ def read_file():
     print("\n===== FILE READER =====")
 
     file_name = input("Enter the file name: ").strip()
+
+    if not file_name:
+        print("File name cannot be empty.")
+        print("File reading operation finished.")
+        return
 
     try:
         with open(file_name, "r") as file:
