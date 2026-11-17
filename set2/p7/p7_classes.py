@@ -64,6 +64,14 @@ class Section:
         self.students.append(student)
         return True
 
+    # Search for a student using their ID.
+    def find_student(self, student_id):
+        for student in self.students:
+            if student.student_id == student_id:
+                return student
+
+        return None
+
     def display_section(self):
         print("\n===== SECTION:", self.section_name, "=====")
         self.subject.display_subject()
@@ -99,6 +107,18 @@ bsit_section.display_section()
 print("\n===== TEST DUPLICATE STUDENT ID =====")
 duplicate_student = Student("2026-001", "Test Student", 85)
 bsit_section.add_student(duplicate_student)
+
+# Search for a student using their ID.
+print("\n===== SEARCH STUDENT BY ID =====")
+search_id = input("Enter Student ID to search: ")
+
+found_student = bsit_section.find_student(search_id)
+
+if found_student:
+    print("Student found!")
+    found_student.display_student()
+else:
+    print("Student ID not found!")
 
 # Update the grade of one student.
 print("\n===== UPDATE STUDENT GRADE =====")
